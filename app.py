@@ -8,6 +8,7 @@ import os
 os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
 os.environ["NEWS_API_KEY"] = st.secrets["NEWS_API_KEY"]
 os.environ["FINNHUB_API_KEY"] = st.secrets["FINNHUB_API_KEY"]
+os.environ["TWELVEDATA_API_KEY"] = st.secrets["TWELVEDATA_API_KEY"]
 
 
 st.set_page_config(
