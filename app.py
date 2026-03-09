@@ -77,7 +77,12 @@ if analyze_button:
     col1, col2, col3, col4 = st.columns(4)
 
     price_change = stock['current_price'] - stock['previous_close']
-    price_change_pct = (price_change / stock['previous_close']) * 100
+    #price_change_pct = (price_change / stock['previous_close']) * 100
+
+    if stock['previous_close'] and stock['previous_close'] != 0:
+        price_change_pct = (price_change / stock['previous_close']) * 100
+    else:
+        price_change_pct = 0
 
     with col1:
         st.metric(
