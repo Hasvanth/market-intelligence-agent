@@ -4,6 +4,10 @@ import pandas as pd
 from stock_data import get_stock_data
 from sentiment import analyze_company_sentiment
 from agent import analyze_company
+import os
+os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
+os.environ["NEWS_API_KEY"] = st.secrets["NEWS_API_KEY"]
+
 
 st.set_page_config(
     page_title="AI Market Intelligence",
