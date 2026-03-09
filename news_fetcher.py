@@ -10,7 +10,7 @@ def get_news(company_name, num_articles=10):
 
     response = newsapi.get_everything(
 
-        q=company_name,
+        q=f'"{company_name}" stock OR shares OR earnings OR market',
         language='en',
         sort_by='publishedAt',
         page_size=num_articles
