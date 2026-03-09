@@ -1,14 +1,32 @@
+#import streamlit as st
+#mport plotly.graph_objects as go
+#import pandas as pd
+#from stock_data import get_stock_data
+#from sentiment import analyze_company_sentiment
+#from agent import analyze_company
+#import os
+#os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
+#os.environ["NEWS_API_KEY"] = st.secrets["NEWS_API_KEY"]
+#os.environ["FINNHUB_API_KEY"] = st.secrets["FINNHUB_API_KEY"]
+#os.environ["TWELVEDATA_API_KEY"] = st.secrets["TWELVEDATA_API_KEY"]
+
+import os
 import streamlit as st
+
+# Load secrets FIRST before any other imports
+try:
+    os.environ["OPENAI_API_KEY"]     = st.secrets["OPENAI_API_KEY"]
+    os.environ["NEWS_API_KEY"]       = st.secrets["NEWS_API_KEY"]
+    os.environ["FINNHUB_API_KEY"]    = st.secrets["FINNHUB_API_KEY"]
+    os.environ["TWELVEDATA_API_KEY"] = st.secrets["TWELVEDATA_API_KEY"]
+except Exception:
+    pass  # running locally — keys come from .env file instead
+
 import plotly.graph_objects as go
 import pandas as pd
 from stock_data import get_stock_data
 from sentiment import analyze_company_sentiment
 from agent import analyze_company
-import os
-os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
-os.environ["NEWS_API_KEY"] = st.secrets["NEWS_API_KEY"]
-os.environ["FINNHUB_API_KEY"] = st.secrets["FINNHUB_API_KEY"]
-os.environ["TWELVEDATA_API_KEY"] = st.secrets["TWELVEDATA_API_KEY"]
 
 
 st.set_page_config(

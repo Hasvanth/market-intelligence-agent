@@ -2,7 +2,8 @@ import os
 from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI
 from langchain.tools import tool
-from langgraph.prebuilt import create_react_agent
+#from langgraph.prebuilt import create_react_agent
+from langchain.agents import create_react_agent
 from news_fetcher import get_news
 from stock_data import get_stock_data
 from rag_engine import store_news, search_news
