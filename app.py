@@ -7,6 +7,7 @@ from agent import analyze_company
 import os
 os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
 os.environ["NEWS_API_KEY"] = st.secrets["NEWS_API_KEY"]
+os.environ["FINNHUB_API_KEY"] = st.secrets["FINNHUB_API_KEY"]
 
 
 st.set_page_config(
