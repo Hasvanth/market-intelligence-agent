@@ -1,6 +1,8 @@
 import yfinance as yf
 import pandas as pandas
+#import streamlit as st
 
+#@st.cache_data(ttl=300)
 def get_stock_data(ticker, period='30d'):
 
     stock = yf.Ticker(ticker)
