@@ -8,10 +8,14 @@ load_dotenv()
 
 client = chromadb.PersistentClient (path="./chroma_db")
 
-embedding_fn = embedding_functions.OpenAIEmbeddingFunction(
-    api_key = os.getenv("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"),
-    model_name = "text-embedding-3-small"
-)
+#embedding_fn = embedding_functions.OpenAIEmbeddingFunction(
+#    api_key = os.getenv("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"),
+#    model_name = "text-embedding-3-small"
+#)
+
+from chromadb.utils.embedding_functions import DefaultEmbeddingFunction
+
+embedding_fn = DefaultEmbeddingFunction()
 
 collection = client.get_or_create_collection(
     name = "market_news",
